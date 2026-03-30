@@ -1,0 +1,6 @@
+aws_region = "us-east-1"
+
+# Must match what you pass to RedisOSS/Terraform as redis_auth_secret_id.
+secret_name = "redis-oss/auth-token"
+
+# recovery_window_in_days = 7
