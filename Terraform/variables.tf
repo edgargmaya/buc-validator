@@ -32,10 +32,9 @@ variable "engine_version" {
   default     = "7.1"
 }
 
-variable "secret_name" {
-  description = "Secret name in AWS Secrets Manager."
+variable "redis_auth_secret_id" {
+  description = "Secrets Manager secret name or ARN that already exists (created by RedisOSS/Secrets-Terraform or another pipeline). Must be readable by this Terraform run (e.g. secretsmanager:GetSecretValue). String must be JSON with a \"password\" key or a plain-text auth token."
   type        = string
-  default     = "redis-oss/cluster"
 }
 
 variable "allow_vpc_internal_access" {

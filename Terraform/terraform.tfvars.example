@@ -1,4 +1,5 @@
-# Copy to terraform.tfvars and fill in the subnet IDs.
+# Copy to terraform.tfvars and fill in values.
+# Apply RedisOSS/Secrets-Terraform first so the secret exists.
 
 aws_region = "us-east-1"
 
@@ -8,6 +9,9 @@ subnet_ids = [
   "subnet-ccccccccccccccccc",
 ]
 
+# Name or ARN from Secrets-Terraform output (e.g. secret_arn or secret_name).
+redis_auth_secret_id = "redis-oss/auth-token"
+
 # By default Redis is allowed from the VPC CIDR. Disable and use explicit CIDRs only:
 # allow_vpc_internal_access = false
 # allowed_ingress_cidr_blocks = ["10.0.0.0/8"]
@@ -15,4 +19,3 @@ subnet_ids = [
 # replication_group_id = "redis-oss-app"
 # node_type            = "cache.t4g.micro"
 # engine_version       = "7.1"
-# secret_name          = "redis-oss/cluster"
