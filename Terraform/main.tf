@@ -16,7 +16,6 @@ locals {
     var.allowed_ingress_cidr_blocks
   ))
 
-  # Secret is created by RedisOSS/Secrets-Terraform (JSON {"password":"..."}) or may be plain text.
   redis_auth_token = try(
     jsondecode(data.aws_secretsmanager_secret_version.redis_auth.secret_string).password,
     trimspace(data.aws_secretsmanager_secret_version.redis_auth.secret_string)
