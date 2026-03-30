@@ -1,0 +1,18 @@
+# Copy to terraform.tfvars and fill in the subnet IDs.
+
+aws_region = "us-east-1"
+
+subnet_ids = [
+  "subnet-aaaaaaaaaaaaaaaaa",
+  "subnet-bbbbbbbbbbbbbbbbb",
+  "subnet-ccccccccccccccccc",
+]
+
+# By default Redis is allowed from the VPC CIDR. Disable and use explicit CIDRs only:
+# allow_vpc_internal_access = false
+# allowed_ingress_cidr_blocks = ["10.0.0.0/8"]
+
+# replication_group_id = "redis-oss-app"
+# node_type            = "cache.t4g.micro"
+# engine_version       = "7.1"
+# secret_name          = "redis-oss/cluster"
